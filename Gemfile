@@ -20,8 +20,10 @@ gem 'shotgun', '~>0.9.1'
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
+  gem 'rspec-html-matchers'
   gem 'rspec', '~>3.0'
   gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :test, :development do

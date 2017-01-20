@@ -12,9 +12,24 @@ require 'shoulda-matchers'
 require 'rack/test'
 require 'capybara'
 require 'capybara/rspec'
+require 'rspec-html-matchers'
+require 'database_cleaner'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+  config.include RSpecHtmlMatchers
+
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
 end
 
 def app
@@ -22,3 +37,7 @@ def app
 end
 
 Capybara.app = app.new
+
+def session
+  last_request.env['rack.session']
+end

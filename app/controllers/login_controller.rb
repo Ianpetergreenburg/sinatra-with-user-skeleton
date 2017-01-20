@@ -6,7 +6,7 @@ get '/login' do
 end
 
 post '/login' do
-  @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
+  @user = User.find_by(username: params[:user][:username]).try(:authenticate, params[:user][:password])
   if @user
     session_login(@user.id)
     redirect '/'

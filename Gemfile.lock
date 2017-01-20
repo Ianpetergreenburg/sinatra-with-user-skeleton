@@ -24,6 +24,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    database_cleaner (1.4.1)
     diff-lcs (1.2.5)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -53,6 +54,9 @@ GEM
     rspec-expectations (3.2.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
+    rspec-html-matchers (0.8.2)
+      nokogiri (~> 1)
+      rspec (>= 3.0.0.a, < 4)
     rspec-mocks (3.2.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
@@ -87,12 +91,14 @@ DEPENDENCIES
   activesupport (~> 4.2.0)
   bcrypt
   capybara
+  database_cleaner
   factory_girl
   faker
   pg
   rack-test
   rake
   rspec (~> 3.0)
+  rspec-html-matchers
   shotgun (~> 0.9.1)
   shoulda-matchers
   sinatra (~> 1.0)
