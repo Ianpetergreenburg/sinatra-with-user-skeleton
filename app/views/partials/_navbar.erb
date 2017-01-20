@@ -1,0 +1,10 @@
+<nav class='navbar'>
+  <% if session_user %>
+    <a href='/users/<%= session_user_id %>'><%= session_user.username %></a>
+    <a href='/logout'>Logout</a>
+  <% else %>
+    <a href='/login'>Login</a>
+    <a href='/users/new'>Register</a>
+  <% end %>
+  <a href='/'>Home</a>
+</nav>

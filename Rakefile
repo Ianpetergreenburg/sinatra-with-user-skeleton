@@ -89,6 +89,7 @@ namespace :db do
 
   desc "Create the databases at #{DB_NAME}"
   task :create do
+    p APP_NAME
     puts "Creating development and test databases if they don't exist..."
     system("createdb #{APP_NAME}_development && createdb #{APP_NAME}_test")
   end
