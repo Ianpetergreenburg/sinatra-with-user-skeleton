@@ -5,7 +5,7 @@
 <% end %>
 
 <form id='login-form' action='/login' method='post'>
-  <input name="username" type='text' placeholder="Username" value="<%=@user.try(:username)%>">
-  <input name="password" type='password' placeholder="Password">
+  <input name="user[username]" type='text' placeholder="Username" value="<%=@user.try(:username)%>">
+  <input name="user[password]" type='password' placeholder="Password">
   <input type="submit" value="login">
 </form>
